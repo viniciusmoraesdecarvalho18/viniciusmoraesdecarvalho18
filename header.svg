@@ -1,0 +1,108 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Vinicius Moraes</title>
+  <desc id="desc">Banner animado com o nome Vinicius Moraes e o texto Ciência de Dados no ICMC-USP.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#070B14" />
+      <stop offset="0.48" stop-color="#0D172A" />
+      <stop offset="1" stop-color="#07111F" />
+    </linearGradient>
+
+    <linearGradient id="accent" x1="235" y1="0" x2="965" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB">
+        <animate attributeName="stop-color" values="#2563EB;#06B6D4;#2563EB" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="0.5" stop-color="#22D3EE">
+        <animate attributeName="stop-color" values="#22D3EE;#818CF8;#22D3EE" dur="5s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="1" stop-color="#8B5CF6">
+        <animate attributeName="stop-color" values="#8B5CF6;#2563EB;#8B5CF6" dur="5s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(600 160) rotate(90) scale(175 520)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#2563EB" stop-opacity="0" />
+    </radialGradient>
+
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" stroke="#94A3B8" stroke-opacity="0.06" stroke-width="1" />
+    </pattern>
+
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22" />
+    </filter>
+
+    <style>
+      .intro {
+        opacity: 0;
+        animation: enter 900ms cubic-bezier(.22, 1, .36, 1) 120ms forwards;
+        transform-origin: center;
+      }
+
+      .subtitle {
+        opacity: 0;
+        animation: rise 700ms ease-out 780ms forwards;
+      }
+
+      .line {
+        stroke-dasharray: 730;
+        stroke-dashoffset: 730;
+        animation: draw 1100ms ease-out 520ms forwards;
+      }
+
+      .dot {
+        animation: pulse 2.4s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      @keyframes enter {
+        from { opacity: 0; transform: translateY(18px) scale(.985); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes draw {
+        to { stroke-dashoffset: 0; }
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: .5; transform: scale(.88); }
+        50% { opacity: 1; transform: scale(1.18); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .intro, .subtitle, .line, .dot { animation: none; opacity: 1; stroke-dashoffset: 0; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="320" rx="24" fill="url(#background)" />
+  <rect width="1200" height="320" rx="24" fill="url(#grid)" />
+  <ellipse cx="600" cy="160" rx="510" ry="170" fill="url(#glow)" />
+
+  <circle cx="160" cy="74" r="62" fill="#2563EB" fill-opacity="0.07" filter="url(#blur)">
+    <animate attributeName="cx" values="160;230;160" dur="8s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1030" cy="250" r="72" fill="#22D3EE" fill-opacity="0.06" filter="url(#blur)">
+    <animate attributeName="cx" values="1030;960;1030" dur="9s" repeatCount="indefinite" />
+  </circle>
+
+  <g class="intro">
+    <text x="600" y="133" text-anchor="middle" fill="#94A3B8" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="7">OLÁ, EU SOU</text>
+    <text x="600" y="201" text-anchor="middle" fill="url(#accent)" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800" letter-spacing="2">VINICIUS MORAES</text>
+  </g>
+
+  <path class="line" d="M235 220 H965" stroke="url(#accent)" stroke-width="2" stroke-linecap="round" />
+  <circle class="dot" cx="235" cy="220" r="4" fill="#2563EB" />
+  <circle class="dot" cx="965" cy="220" r="4" fill="#8B5CF6" style="animation-delay: .4s" />
+
+  <text class="subtitle" x="600" y="260" text-anchor="middle" fill="#CBD5E1" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="4">CIÊNCIA DE DADOS  •  ICMC-USP</text>
+
+  <rect x="1" y="1" width="1198" height="318" rx="23" stroke="url(#accent)" stroke-opacity="0.22" stroke-width="2" />
+</svg>
